@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JS,ES6," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="A glimpse at some ES6 features used quite frequently">
+<meta name="keywords" content="JS,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6-Basics-2">
+<meta property="og:url" content="http://yoursite.com/JavaScript/es6-basics-2/index.html">
+<meta property="og:site_name" content="Victor x Lab">
+<meta property="og:description" content="A glimpse at some ES6 features used quite frequently">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-14T02:19:37.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6-Basics-2">
+<meta name="twitter:description" content="A glimpse at some ES6 features used quite frequently">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/JavaScript/es6-basics-2/"/>
+
+
+
+
+
+  <title>ES6-Basics-2 | Victor x Lab</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-119183417-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Victor x Lab</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/JavaScript/es6-basics-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pokemon1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Victor x Lab">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6-Basics-2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-14T10:10:15+08:00">
+                2018-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>A glimpse at some ES6 features used quite frequently</p>
+<a id="more"></a>
+<h2 id="Spread-Syntax"><a href="#Spread-Syntax" class="headerlink" title="Spread Syntax"></a>Spread Syntax</h2><p>Spread syntax, as the name suggests, is used to spread an array, a string, or an object wherever zero or more arguments(function calls), elements(array literals), or key-value pairs(object literals) are needed.<br>Note that object spread syntax is not ES6, but will be standardized in <strong>ECMAScript 2018</strong>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// function calls</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">4</span>, <span class="number">38</span>];</span><br><span class="line">add(...numbers) <span class="comment">// 42</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// array literals</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>, ...[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="number">5</span>)</span><br><span class="line"><span class="comment">// 1 2 3 4 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// more than one spread</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, ...[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], ...[<span class="number">6</span>, <span class="number">7</span>]];v</span><br><span class="line"></span><br><span class="line"><span class="comment">// object literals</span></span><br><span class="line"><span class="keyword">let</span> objClone = &#123; ...obj &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Replace-apply"><a href="#Replace-apply" class="headerlink" title="Replace apply()"></a>Replace apply()</h3><p>In ES5, apply() is used convert array into arguments. With spread syntax, there is no need for that.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y, z</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">f.apply(<span class="literal">null</span>, args);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x, y, z</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">f(...args);</span><br></pre></td></tr></table></figure>
+<h3 id="Copy-arrays-or-objects"><a href="#Copy-arrays-or-objects" class="headerlink" title="Copy arrays or objects"></a>Copy arrays or objects</h3><ol>
+<li>Array</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [...arr]; <span class="comment">// like arr.slice()</span></span><br><span class="line">arr2.push(<span class="number">4</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// arr2 becomes [1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">// arr remains unaffected</span></span><br></pre></td></tr></table></figure>
+<p>Note that spread syntax effectively goes one level deep while copying an array, so it may not be suitable to copy multidimensional arrays.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [[<span class="number">1</span>], [<span class="number">2</span>], [<span class="number">3</span>]];</span><br><span class="line"><span class="keyword">var</span> b = [...a];</span><br><span class="line">b.shift().shift(); <span class="comment">// 1</span></span><br><span class="line"><span class="comment">// Now array a is affected as well: [[], [2], [3]]</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Object(ES7)  </li>
+</ol>
+<p>Spread syntax copies own enumerable properties from a provided object onto a <strong>new</strong> object. Note that it is <strong>shallow copy(excluding prototype)</strong>.<br>Shallow-cloning or merging of objects is now possible using a shorter syntax than <code>Object.assign()</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">x</span>: <span class="number">42</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">foo</span>: <span class="string">'baz'</span>, <span class="attr">y</span>: <span class="number">13</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clonedObj = &#123; ...obj1 &#125;;</span><br><span class="line"><span class="comment">// Object &#123; foo: "bar", x: 42 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mergedObj = &#123; ...obj1, ...obj2 &#125;;</span><br><span class="line"><span class="comment">// Object &#123; foo: "baz", x: 42, y: 13 &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Integration-with-destructing-assignment"><a href="#Integration-with-destructing-assignment" class="headerlink" title="Integration with destructing assignment"></a>Integration with <a href="#Destructing-Assignment">destructing assignment</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line">a = list[<span class="number">0</span>], rest = list.slice(<span class="number">1</span>)</span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line">[a, ...rest] = list</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [first, ...rest] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">first <span class="comment">// 1</span></span><br><span class="line">rest  <span class="comment">// [2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [first, ...rest] = [];</span><br><span class="line">first <span class="comment">// undefined</span></span><br><span class="line">rest  <span class="comment">// []</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [first, ...rest] = [<span class="string">"foo"</span>];</span><br><span class="line">first  <span class="comment">// "foo"</span></span><br><span class="line">rest   <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<h3 id="String-Literals"><a href="#String-Literals" class="headerlink" title="String Literals"></a>String Literals</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...<span class="string">'hello'</span>]</span><br><span class="line"><span class="comment">// [ "h", "e", "l", "l", "o" ]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Other-iterables-any-object-implementing-Iterator-Interface"><a href="#Other-iterables-any-object-implementing-Iterator-Interface" class="headerlink" title="Other iterables(any object implementing Iterator Interface)"></a>Other iterables(any object implementing Iterator Interface)</h3><p>Here <code>querySelectorAll</code> is a <code>nodeList</code> object, which implements the <code>Iterator</code> Interface.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nodeList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">let</span> array = [...nodeList]</span><br></pre></td></tr></table></figure>
+<h2 id="Rest-Parameter"><a href="#Rest-Parameter" class="headerlink" title="Rest Parameter"></a>Rest Parameter</h2><p>Rest parameter is used when we have indefinite number of arguments passed to an array. It is generally considered a replacement for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank" rel="noopener">arguments</a> object in previous version.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, b, ...theArgs</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="built_in">console</span>.log(theArgs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) <span class="comment">// [3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<p>A few points to note:  </p>
+<ol>
+<li>Unlike arguments, rest parameters are stored in a <strong>real</strong> array.</li>
+<li>There should be no more arguments after rest parameters.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Error!</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, ...b, c</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>The array length does not take rest into account.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;&#125;).length  <span class="comment">// 1</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">...a</span>) </span>&#123;&#125;).length  <span class="comment">// 0</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a, ...b</span>) </span>&#123;&#125;).length  <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Rest can be used together with <a href="#Destructing-Assignment">destructing assignment</a>  </li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">...[a, b, c]</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">1</span>)          <span class="comment">// NaN (b and c are undefined)</span></span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)    <span class="comment">// 6</span></span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>) <span class="comment">// 6 (the fourth parameter is not destructured)</span></span><br></pre></td></tr></table></figure>
+<h2 id="Destructing-Assignment"><a href="#Destructing-Assignment" class="headerlink" title="Destructing Assignment"></a>Destructing Assignment</h2><p>The destructuring assignment syntax is used to <strong>unpack</strong> values from arrays, or properties from objects, into distinct variables.<br>Note: It is very common to use destructing assignment with <a href="#Rest-Parameter">rest parameter</a> together.</p>
+<h3 id="Array-Destructing"><a href="#Array-Destructing" class="headerlink" title="Array Destructing"></a>Array Destructing</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a, b, rest;</span><br><span class="line">[a, b] = [<span class="number">10</span>, <span class="number">20</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// destruct array with rest parameters</span></span><br><span class="line">[a, b, ...rest] = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(rest); <span class="comment">// [30, 40, 50]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Object-Destructing"><a href="#Object-Destructing" class="headerlink" title="Object Destructing"></a>Object Destructing</h3><p>In array destructing, we use indexing to do match left-hand and right hand. In object destructing, however, there is such ordered indexing. As a result, we need to provide key in left hand side to match the right hand side.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(&#123; a, b &#125; = &#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Stage 3 proposal</span></span><br><span class="line">(&#123;a, b, ...rest&#125; = &#123;<span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span>, <span class="attr">c</span>: <span class="number">30</span>, <span class="attr">d</span>: <span class="number">40</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(rest); <span class="comment">// &#123;c: 30, d: 40&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Note that the round braces is needed for object destructing without declaration</span></span><br><span class="line"><span class="keyword">let</span> a, b;</span><br><span class="line"></span><br><span class="line">(&#123;a, b&#125; = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>What if we want assign the value to a variable with new name?  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;<span class="attr">p</span>: <span class="number">42</span>, <span class="attr">q</span>: <span class="literal">true</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">p</span>: foo, <span class="attr">q</span>: bar&#125; = o;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 42 </span></span><br><span class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Default-values"><a href="#Default-values" class="headerlink" title="Default values"></a>Default values</h3><p>A variable can be assigned a default, in the case that the value unpacked from the array/object is undefined.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// array</span></span><br><span class="line"><span class="keyword">let</span> a, b;</span><br><span class="line"></span><br><span class="line">[a=<span class="number">5</span>, b=<span class="number">7</span>] = [<span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// object</span></span><br><span class="line"><span class="keyword">let</span> &#123;a = <span class="number">10</span>, b = <span class="number">5</span>&#125; = &#123;<span class="attr">a</span>: <span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><h3 id="Review-of-node-js-module-exports-and-require"><a href="#Review-of-node-js-module-exports-and-require" class="headerlink" title="Review of node.js module.exports and require"></a>Review of node.js <code>module.exports</code> and <code>require</code></h3><p>As a comparision, let us see how we manage modules in node.js:  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example 1</span></span><br><span class="line"><span class="comment">// add.js</span></span><br><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports = add;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output.js</span></span><br><span class="line"><span class="keyword">var</span> add = <span class="built_in">require</span>(‘./add.js’);</span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">2</span>,<span class="number">2</span>)); <span class="comment">// 4;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Example 2: mutiple exports</span></span><br><span class="line"><span class="comment">// math.js</span></span><br><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports.add = add;</span><br><span class="line"><span class="keyword">var</span> multiply = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports.multiply = multiply;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output.js</span></span><br><span class="line"><span class="keyword">var</span> add = <span class="built_in">require</span>(‘./math.js’).add;</span><br><span class="line"><span class="keyword">var</span> multiply = <span class="built_in">require</span>(‘./math.js’).multiply;</span><br></pre></td></tr></table></figure>
+<p>Note the above syntax is still valuable in certain situtations when we could only use ES5(like in webpack config files).</p>
+<h3 id="Module-in-ES6-with-import-and-export"><a href="#Module-in-ES6-with-import-and-export" class="headerlink" title="Module in ES6 with import and export"></a>Module in ES6 with import and export</h3><p>Great news: In ES6, JS now natively supports modules!<br>The same code here, except <code>module.exports</code> is replaced with <code>export</code>, and <code>require</code> is replaced with <code>import</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example 1</span></span><br><span class="line"><span class="comment">// math.js</span></span><br><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> add;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output.js</span></span><br><span class="line"><span class="keyword">import</span> add <span class="keyword">from</span> ‘./math.js’;</span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">2</span>,<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example 2</span></span><br><span class="line"><span class="comment">// math.js</span></span><br><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> add;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> addTwo = <span class="function">(<span class="params">a</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> add(<span class="number">2</span>, a);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> addTwo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output.js</span></span><br><span class="line"><span class="keyword">import</span> anyname, &#123; addTwo &#125; <span class="keyword">from</span> ‘./math.js’;</span><br><span class="line"><span class="built_in">console</span>.log(anyname(<span class="number">2</span>,<span class="number">2</span>) === addTwo(<span class="number">2</span>)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Example 3: import *</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> addSmallNums <span class="keyword">from</span> ‘./math.js’;</span><br><span class="line"><span class="built_in">console</span>.log(addSmallNums.addOne(<span class="number">2</span>) === addSmallNums.addTwo(<span class="number">1</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="The-reason-behind-ES6-modules"><a href="#The-reason-behind-ES6-modules" class="headerlink" title="The reason behind ES6 modules"></a>The reason behind ES6 modules</h3><p>Previously in CommonJS module(<code>module.exports</code> and <code>require</code>), modules are loaded at <strong>running time</strong>. Because of that, a lot of code optimizations are impossible.<br>What people have in mind when designing ES6 that work should be moved to <strong>compilation time</strong> as much as possible. So here comes ES6 modules, which provide much more opportunities for optimizations(for example, macro and type system).</p>
+<h3 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h3><p>This command sets the default exported interface. With this, users do not need to the name of interface they want to load before hand.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure>
+<p>In essence, <code>export default</code> is a convenient way to create a interface named <strong>dafault</strong> and export it. And when import, the JS engine will look for the interface named <strong>default</strong> and loads it.  </p>
+<p>Note that <code>export default</code> differs a little in syntan with <code>export</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example1</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// no curly braces &#123;&#125;</span></span><br><span class="line"><span class="keyword">import</span> crc32 <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;crc32&#125; <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// example2</span></span><br><span class="line"><span class="comment">// Correct</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Correct</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> a;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Template-Literals"><a href="#Template-Literals" class="headerlink" title="Template Literals"></a>Template Literals</h2><p>Template literals are string literals allowing embedded expressions.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`string text`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// mutiple line string</span></span><br><span class="line"><span class="string">`string text line 1</span></span><br><span class="line"><span class="string"> string text line 2`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// embed expression in template literals</span></span><br><span class="line"><span class="string">`string text <span class="subst">$&#123;expression&#125;</span> string text`</span></span><br></pre></td></tr></table></figure>
+<h2 id="Computed-property-names"><a href="#Computed-property-names" class="headerlink" title="Computed property names"></a>Computed property names</h2><p>In ES6, the <strong>object initializer syntax</strong> supports computed property names. This is like we used to with <strong>property accessor</strong> syntax.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// property accessor for comparision</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line">person[<span class="string">'firstname'</span>] = <span class="string">'Mario'</span>;</span><br><span class="line">person[<span class="string">'lastname'</span>] = <span class="string">'Rossi'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  [<span class="string">'foo'</span> + ++i]: i,</span><br><span class="line">  [<span class="string">'foo'</span> + ++i]: i,</span><br><span class="line">  [<span class="string">'foo'</span> + ++i]: i</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.foo1); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(a.foo2); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(a.foo3); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h2 id="Default-parameters"><a href="#Default-parameters" class="headerlink" title="Default parameters"></a>Default parameters</h2><p>Another syntax sugar in ES6.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// how we do it in pre ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> default_b = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">if</span>(b == <span class="literal">undefined</span>)&#123;</span><br><span class="line">    b = default_b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//....</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// how we do it with default parameters</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a, b = <span class="number">3</span></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/webpack/webpack-boilerplate/" rel="next" title="webpack-boilerplate">
+                <i class="fa fa-chevron-left"></i> webpack-boilerplate
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/pokemon1.jpg"
+                alt="Victor" />
+            
+              <p class="site-author-name" itemprop="name">Victor</p>
+              <p class="site-description motion-element" itemprop="description">Code speak louder than words</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Victor515" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spread-Syntax"><span class="nav-number">1.</span> <span class="nav-text">Spread Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Replace-apply"><span class="nav-number">1.1.</span> <span class="nav-text">Replace apply()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-arrays-or-objects"><span class="nav-number">1.2.</span> <span class="nav-text">Copy arrays or objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integration-with-destructing-assignment"><span class="nav-number">1.3.</span> <span class="nav-text">Integration with destructing assignment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Literals"><span class="nav-number">1.4.</span> <span class="nav-text">String Literals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-iterables-any-object-implementing-Iterator-Interface"><span class="nav-number">1.5.</span> <span class="nav-text">Other iterables(any object implementing Iterator Interface)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rest-Parameter"><span class="nav-number">2.</span> <span class="nav-text">Rest Parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Destructing-Assignment"><span class="nav-number">3.</span> <span class="nav-text">Destructing Assignment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Destructing"><span class="nav-number">3.1.</span> <span class="nav-text">Array Destructing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Destructing"><span class="nav-number">3.2.</span> <span class="nav-text">Object Destructing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-values"><span class="nav-number">3.3.</span> <span class="nav-text">Default values</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Module"><span class="nav-number">4.</span> <span class="nav-text">Module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review-of-node-js-module-exports-and-require"><span class="nav-number">4.1.</span> <span class="nav-text">Review of node.js module.exports and require</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Module-in-ES6-with-import-and-export"><span class="nav-number">4.2.</span> <span class="nav-text">Module in ES6 with import and export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-reason-behind-ES6-modules"><span class="nav-number">4.3.</span> <span class="nav-text">The reason behind ES6 modules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export-default"><span class="nav-number">4.4.</span> <span class="nav-text">export default</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Template-Literals"><span class="nav-number">5.</span> <span class="nav-text">Template Literals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computed-property-names"><span class="nav-number">6.</span> <span class="nav-text">Computed property names</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default-parameters"><span class="nav-number">7.</span> <span class="nav-text">Default parameters</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
