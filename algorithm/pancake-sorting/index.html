@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="algorithm,sorting," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="This is my first post!">
-<meta name="keywords" content="programming, web development, frontend">
+<meta name="description" content="“I want my pancakes to be sorted, otherwise I can’t eat them!” A computer scientist yells.">
+<meta name="keywords" content="algorithm,sorting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/uncategorized/hello-world/index.html">
+<meta property="og:title" content="Pancake Sorting">
+<meta property="og:url" content="http://yoursite.com/algorithm/pancake-sorting/index.html">
 <meta property="og:site_name" content="Victor x Lab">
-<meta property="og:description" content="This is my first post!">
+<meta property="og:description" content="“I want my pancakes to be sorted, otherwise I can’t eat them!” A computer scientist yells.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-03T21:06:28.241Z">
+<meta property="og:updated_time" content="2018-07-27T10:48:34.914Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="This is my first post!">
+<meta name="twitter:title" content="Pancake Sorting">
+<meta name="twitter:description" content="“I want my pancakes to be sorted, otherwise I can’t eat them!” A computer scientist yells.">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/uncategorized/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/algorithm/pancake-sorting/"/>
 
 
 
 
 
-  <title>Hello World | Victor x Lab</title>
+  <title>Pancake Sorting | Victor x Lab</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/algorithm/pancake-sorting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor">
@@ -289,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Pancake Sorting</h1>
         
 
         <div class="post-meta">
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T23:49:00+08:00">
-                2018-04-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T18:41:51+08:00">
+                2018-07-27
               </time>
             
 
@@ -324,8 +324,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/uncategorized/" itemprop="url" rel="index">
-                    <span itemprop="name">uncategorized</span>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
                   </a>
                 </span>
 
@@ -366,7 +366,22 @@
       
 
       
-        <p>This is my first post!</p>
+        <p>“I want my pancakes to be sorted, otherwise I can’t eat them!” A computer scientist yells.</p>
+<a id="more"></a>
+<h2 id="Background-and-Idea"><a href="#Background-and-Idea" class="headerlink" title="Background and Idea"></a>Background and Idea</h2><p>Above is just my personal assumption where this problem comes from. In <a href="https://en.wikipedia.org/wiki/Pancake_sorting" target="_blank" rel="noopener">wikipedia</a>, it is said to be first brought up by American geometer Jacob E. Goodman. This is an interesting problem, because unlike array elements, pancakes cannot be swapped.<br>What we could do is to insert <a href="https://en.wikipedia.org/wiki/Spatula" target="_blank" rel="noopener">spatula</a> at any point and flip(in computer science, this is called reversal) all pancakes above it. Thus, unlike traditional sorting algorithms which focu on reducing times of comparison, here we pay more attention to times of reversals.</p>
+<p>Below is one idea of one implementation:</p>
+<ol>
+<li>Find the largest pancake among all pancakes</li>
+<li>Stick a spatula into it and flip</li>
+<li>Flip the whole stack of pancakes. Now the largest pancake is at the end.</li>
+<li>Repeat 1-3 steps, now we only consider all pancakes except the last one. Keep doing it until there is no pancakes left.  </li>
+</ol>
+<p>Here is a video showing how it is done: <a href="https://www.youtube.com/embed/kk-_DDgoXfk" target="_blank" rel="noopener">Pancake Sorting</a></p>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pancakeSort</span><span class="params">(<span class="keyword">int</span>[] pancakes)</span></span>&#123;</span><br><span class="line">        sortHelper(pancakes, pancakes.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sortHelper</span><span class="params">(<span class="keyword">int</span>[] pancakes, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> largest = findMax(pancakes, <span class="number">0</span>, n);</span><br><span class="line">        flip(pancakes, <span class="number">0</span>, largest);</span><br><span class="line">        flip(pancakes, <span class="number">0</span>, n);</span><br><span class="line">        sortHelper(pancakes, n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return the index of largest pancake in current subarray</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findMax</span><span class="params">(<span class="keyword">int</span>[] pancakes, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = start;</span><br><span class="line">        <span class="keyword">int</span> max = pancakes[start];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = start + <span class="number">1</span>; i &lt;= end; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pancakes[i] &gt; max)&#123;</span><br><span class="line">                max = pancakes[i];</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">flip</span><span class="params">(<span class="keyword">int</span>[] pancakes, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = end - start + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len / <span class="number">2</span>; i++)&#123;</span><br><span class="line">            swap(pancakes, start + i, end - i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// I said there is no swapping in terms of pancakes, but in current</span></span><br><span class="line">    <span class="comment">// computer architecture, there is no "flipping" operation, so we </span></span><br><span class="line">    <span class="comment">// need to use swap to simulate it</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] pancakes, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = pancakes[i];</span><br><span class="line">        pancakes[i] = pancakes[j];</span><br><span class="line">        pancakes[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ul>
+<li><a href="https://www.geeksforgeeks.org/pancake-sorting/" target="_blank" rel="noopener">Geekforgeeks</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pancake_sorting" target="_blank" rel="noopener">Wikipedia</a></li>
+</ul>
 
       
     </div>
@@ -382,6 +397,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+            <a href="/tags/sorting/" rel="tag"># sorting</a>
+          
+        </div>
+      
 
       
       
@@ -391,15 +414,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/JavaScript/es6-basics-2/" rel="next" title="ES6-Basics-2">
+                <i class="fa fa-chevron-left"></i> ES6-Basics-2
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Cloud/aws-concept/" rel="prev" title="AWS Concept">
-                AWS Concept <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -526,6 +558,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background-and-Idea"><span class="nav-number">1.</span> <span class="nav-text">Background and Idea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementation"><span class="nav-number">2.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
