@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="A glimpse at some ES6 features used quite frequently">
+<meta name="description" content="A glimpse at some ES6 features used quite frequently.">
 <meta name="keywords" content="JS,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6-Basics-2">
 <meta property="og:url" content="http://yoursite.com/JavaScript/es6-basics-2/index.html">
 <meta property="og:site_name" content="Victor x Lab">
-<meta property="og:description" content="A glimpse at some ES6 features used quite frequently">
+<meta property="og:description" content="A glimpse at some ES6 features used quite frequently.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-14T02:20:55.184Z">
+<meta property="og:updated_time" content="2018-08-06T08:40:40.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6-Basics-2">
-<meta name="twitter:description" content="A glimpse at some ES6 features used quite frequently">
+<meta name="twitter:description" content="A glimpse at some ES6 features used quite frequently.">
 
 
 
@@ -366,7 +366,7 @@
       
 
       
-        <p>A glimpse at some ES6 features used quite frequently</p>
+        <p>A glimpse at some ES6 features used quite frequently.</p>
 <a id="more"></a>
 <h2 id="Spread-Syntax"><a href="#Spread-Syntax" class="headerlink" title="Spread Syntax"></a>Spread Syntax</h2><p>Spread syntax, as the name suggests, is used to spread an array, a string, or an object wherever zero or more arguments(function calls), elements(array literals), or key-value pairs(object literals) are needed.<br>Note that object spread syntax is not ES6, but will be standardized in <strong>ECMAScript 2018</strong>.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// function calls</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">4</span>, <span class="number">38</span>];</span><br><span class="line">add(...numbers) <span class="comment">// 42</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// array literals</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>, ...[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="number">5</span>)</span><br><span class="line"><span class="comment">// 1 2 3 4 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// more than one spread</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, ...[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], ...[<span class="number">6</span>, <span class="number">7</span>]];v</span><br><span class="line"></span><br><span class="line"><span class="comment">// object literals</span></span><br><span class="line"><span class="keyword">let</span> objClone = &#123; ...obj &#125;;</span><br></pre></td></tr></table></figure>
