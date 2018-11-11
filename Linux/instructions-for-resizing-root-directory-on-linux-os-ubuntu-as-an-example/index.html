@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux,Ubuntu,Instructions," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Doing the right things">
-<meta name="keywords" content="programming, web development, frontend">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Victor x Lab">
-<meta property="og:url" content="http://yoursite.com/tags/AWS/index.html">
+<meta name="description" content="This post works as a memo to show how to resize any directory on Linux when facing “short on storage” problem.">
+<meta name="keywords" content="Linux,Ubuntu,Instructions">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Instructions for resizing root directory on Linux OS(Ubuntu as an example)">
+<meta property="og:url" content="http://yoursite.com/Linux/instructions-for-resizing-root-directory-on-linux-os-ubuntu-as-an-example/index.html">
 <meta property="og:site_name" content="Victor x Lab">
-<meta property="og:description" content="Doing the right things">
+<meta property="og:description" content="This post works as a memo to show how to resize any directory on Linux when facing “short on storage” problem.">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-11T05:40:33.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Victor x Lab">
-<meta name="twitter:description" content="Doing the right things">
+<meta name="twitter:title" content="Instructions for resizing root directory on Linux OS(Ubuntu as an example)">
+<meta name="twitter:description" content="This post works as a memo to show how to resize any directory on Linux when facing “short on storage” problem.">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/AWS/"/>
+  <link rel="canonical" href="http://yoursite.com/Linux/instructions-for-resizing-root-directory-on-linux-os-ubuntu-as-an-example/"/>
 
 
 
 
 
-  <title>Tag: AWS | Victor x Lab</title>
+  <title>Instructions for resizing root directory on Linux OS(Ubuntu as an example) | Victor x Lab</title>
   
 
 
@@ -153,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,54 +258,193 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>AWS<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Linux/instructions-for-resizing-root-directory-on-linux-os-ubuntu-as-an-example/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/pokemon1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Victor x Lab">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Cloud/aws-concept/" itemprop="url">
-              
-                <span itemprop="name">AWS Concept</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Instructions for resizing root directory on Linux OS(Ubuntu as an example)</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-03T13:51:26-05:00"
-              content="2018-05-03" >
-          05-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T23:15:46-06:00">
+                2018-11-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This post works as a memo to show how to resize any directory on Linux when facing “short on storage” problem.</p>
+<a id="more"></a>
+<p>Tool: GParted, <strong>GNOME Partition Editor</strong> (<a href="https://gparted.org/index.php" target="_blank" rel="noopener">https://gparted.org/index.php</a>)</p>
+<p>GParted is a general tool to create, move, resize any partition on Unix-like system. It can be installed and directly open on Linux. But since we need to resize root directory, it is not possible to do it when the system is booted. In other words, we need to do it outside of Linux system itself.</p>
+<p>And that’s why we need GParted Live, which can be installed on USB and booted from there.</p>
+<p>Instructions:</p>
+<ol>
+<li>Download newest GParted Live on its website.</li>
+<li>Follow the <a href="https://gparted.org/liveusb.php" target="_blank" rel="noopener">manual</a> to setup GParted Live on any USB drive.</li>
+<li>Reboot and in your bios options, select “boot from usb”(or anything similar, it depends on which system and hardware you use)</li>
+<li>If above procedures works, you will now see the “GParted Live” menu, select the first option, which is “GParted Live (Default Settings)”. It will ask you select some of your preference, and then you will start GParted. Now you can do your jobs and resize any partition!</li>
+</ol>
+<p>Additional Notes:</p>
+<ol>
+<li>If you are a HP user, you may face problems when you try to “boot from usb”. If that is the case, see this reference <a href="https://appuals.com/selected-boot-image-did-not-authenticate/" target="_blank" rel="noopener">link</a>. It is because new version of PC uses Secure Boot, which in some reason forbid your request to boot the GParted Live. So, in your boot options, disable Secure Boot by enabling Legacy Boot, and things will work smoothly.</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+            <a href="/tags/Instructions/" rel="tag"># Instructions</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/algorithm/pancake-sorting/" rel="next" title="Pancake Sorting">
+                <i class="fa fa-chevron-left"></i> Pancake Sorting
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -312,6 +452,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -560,6 +704,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
